@@ -10,7 +10,10 @@ A user configuration template for [AstroNvim](https://github.com/AstroNvim/Astro
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 ```
-
+```powershell
+Rename-Item -Path $env:LOCALAPPDATA\nvim -NewName $env:LOCALAPPDATA\nvim.bak
+Rename-Item -Path $env:LOCALAPPDATA\nvim-data -NewName $env:LOCALAPPDATA\nvim-data.bak
+```
 #### Clone AstroNvim
 
 ```shell
