@@ -1,35 +1,26 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
-return function(local_vim)
-  local_vim.opt.relativenumber = true -- sets vim.opt.relativenumber
-  local_vim.opt.number = true -- sets vim.opt.number
-  local_vim.opt.spell = false -- sets vim.opt.spell
-  local_vim.opt.signcolumn = "auto" -- sets vim.opt.signcolumn to auto
-  local_vim.opt.wrap = false -- sets vim.opt.wrap
+return function(astronvim)
+  astronvim.opt.relativenumber = true -- sets vim.opt.relativenumber
+  astronvim.opt.number = true -- sets vim.opt.number
+  astronvim.opt.spell = false -- sets vim.opt.spell
+  astronvim.opt.signcolumn = "auto" -- sets vim.opt.signcolumn to auto
+  astronvim.opt.wrap = false -- sets vim.opt.wrap
   if vim.fn.executable('pwsh') == 1 then
-    local_vim.opt.shell = "pwsh"
-    local_vim.opt.shellcmdflag = "-NoLogo -NoProfile -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-    local_vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
-    local_vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-    local_vim.opt.shellquote = ""
-    local_vim.opt.shellxquote = ""
+    astronvim.opt.shell = "pwsh"
+    astronvim.opt.shellcmdflag = "-NoLogo -NoProfile -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+    astronvim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
+    astronvim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+    astronvim.opt.shellquote = ""
+    astronvim.opt.shellxquote = ""
   end
 
-  local_vim.g.mapleader = " " -- sets vim.g.mapleader
-  local_vim.g.autoformat_enabled = true -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
-  local_vim.g.cmp_enabled = true -- enable completion at start
-  local_vim.g.autopairs_enabled = true -- enable autopairs at start
-  local_vim.g.diagnostics_mode = 3 -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
-  local_vim.g.icons_enabled = true -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
-  local_vim.g.ui_notifications_enabled = true -- disable notifications when toggling UI elements
-  local_vim.g.resession_enabled = false -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
-  return local_vim
+  astronvim.g.mapleader = " " -- sets vim.g.mapleader
+  astronvim.g.autoformat_enabled = true -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
+  astronvim.g.cmp_enabled = true -- enable completion at start
+  astronvim.g.autopairs_enabled = true -- enable autopairs at start
+  astronvim.g.diagnostics_mode = 3 -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
+  astronvim.g.icons_enabled = true -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
+  astronvim.g.ui_notifications_enabled = true -- disable notifications when toggling UI elements
+  astronvim.g.resession_enabled = false -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
+  return astronvim
 end
--- If you need more control, you can use the function()...end notation
--- return function(local_vim)
---   local_vim.opt.relativenumber = true
---   local_vim.g.mapleader = " "
---   local_vim.opt.whichwrap = vim.opt.whichwrap - { 'b', 's' } -- removing option from list
---   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
---
---   return local_vim
--- end
