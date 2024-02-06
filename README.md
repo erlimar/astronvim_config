@@ -2,6 +2,8 @@
 
 Baseado no template [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
+![](assets/my_astronvim_screen.png)
+
 ## 🛠️ Instalação
 
 ### Faça o backup de sua configuração nvim atual se quiser
