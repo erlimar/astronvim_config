@@ -1,38 +1,41 @@
-# AstroNvim User Configuration Example
+# Minha configuração de usuário para AstroNvim
 
-A user configuration template for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+Baseado no template [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
-## 🛠️ Installation
+## 🛠️ Instalação
 
-#### Make a backup of your current nvim and shared folder
+### Faça o backup de sua configuração nvim atual se quiser
 
 ```shell
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 ```
 ```powershell
-Rename-Item -Path $env:LOCALAPPDATA\nvim -NewName $env:LOCALAPPDATA\nvim.bak
-Rename-Item -Path $env:LOCALAPPDATA\nvim-data -NewName $env:LOCALAPPDATA\nvim-data.bak
+rni -Path $env:LOCALAPPDATA\nvim -NewName $env:LOCALAPPDATA\nvim.bak
+rni -Path $env:LOCALAPPDATA\nvim-data -NewName $env:LOCALAPPDATA\nvim-data.bak
 ```
-#### Clone AstroNvim
+### Instae a configuração do AstroNvim
 
 ```shell
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 ```
-
-#### Create a new user repository from this template
-
-Press the "Use this template" button above to create a new repository to store your user configuration.
-
-You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
-
-#### Clone the repository
-
-```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim/lua/user
+```powershell
+git clone https://github.com/AstroNvim/AstroNvim $env:LOCALAPPDATA\nvim
 ```
 
-#### Start Neovim
+> Veja mais instruções em https://github.com/AstroNvim/AstroNvim para pré-requisitos
+> do AstroNvim e setup inicial
+
+### Clone este repositório de configurações do usuário
+
+```shell
+git clone https://github.com/erlimar/astronvim_config ~/.config/nvim/lua/user
+```
+```powershell
+git clone https://github.com/erlimar/astronvim_config $env:LOCALAPPDATA\nvim\lua\user
+```
+
+### Inicie seu Neovim
 
 ```shell
 nvim
